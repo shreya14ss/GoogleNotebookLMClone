@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'GoogleNotebookLMClone';
+  isDocumentReady = false;
+  uploadedFile: File | null = null;
+
+  onDocumentReady() {
+    this.isDocumentReady = true;
+  }
+
+  onFileUploaded(file: File) {
+    this.uploadedFile = file;
+  }
 }
