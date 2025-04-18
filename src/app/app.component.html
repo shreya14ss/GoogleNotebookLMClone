@@ -1,0 +1,21 @@
+<div class="app-container">
+  <main class="app-content">
+    <!-- Initial Upload View -->
+    <div class="upload-view" *ngIf="!isDocumentReady">
+      <app-pdf-upload 
+        (documentReady)="onDocumentReady()" 
+        (fileUploaded)="onFileUploaded($event)">
+      </app-pdf-upload>
+    </div>
+
+    <!-- Document and Chat View -->
+    <div class="document-view" [class.active]="isDocumentReady">
+      <div class="chat-panel">
+        <app-chat-interface [isDocumentReady]="isDocumentReady"></app-chat-interface>
+      </div>
+      <div class="document-panel">
+        <app-pdf-viewer [pdfFile]="uploadedFile"></app-pdf-viewer>
+      </div>
+    </div>
+  </main>
+</div>

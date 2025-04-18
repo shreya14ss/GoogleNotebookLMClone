@@ -1,0 +1,72 @@
+.pdf-viewer-container {
+  height: 100%;
+  background-color: #f8f9fa;
+
+  .pdf-content {
+    height: 100%;
+    
+    .document-header {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background-color: white;
+      border-bottom: 1px solid #e5e7eb;
+
+      .document-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3e8ff;
+        border-radius: 50%;
+        margin-right: 12px;
+        color: #7c3aed;
+      }
+
+      span {
+        flex: 1;
+        font-size: 1rem;
+        color: #1f2937;
+      }
+
+      .close-button {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #6b7280;
+        cursor: pointer;
+        padding: 0.5rem;
+        
+        &:hover {
+          color: #374151;
+        }
+      }
+    }
+
+    ::ng-deep {
+      .ngx-extended-pdf-viewer {
+        height: calc(100% - 64px) !important;
+        
+        .toolbar {
+          background-color: white !important;
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .page {
+          margin: 1rem auto !important;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+
+  .no-pdf {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 1rem;
+  }
+}
